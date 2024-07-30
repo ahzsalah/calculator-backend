@@ -1,0 +1,19 @@
+services:
+  # database:
+  #   image: postgres:14.2
+  #   container_name: first-database
+  #   restart: always
+  #   volumes:
+  #     - nawy-docker-project:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+    # links:
+    #   - database
+
+volumes:
+  nawy-docker-project:
